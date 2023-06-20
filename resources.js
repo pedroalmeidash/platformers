@@ -9,6 +9,11 @@ var resources = [{
   src: "level1.tmx"
 },
 {
+  name: "level2",
+  type: "tmx",
+  src: "level2.tmx"
+},
+{
   name: "player",
   type: "image",
   src: "player.png"

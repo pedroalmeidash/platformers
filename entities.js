@@ -35,8 +35,13 @@ var CoinEntity = me.CollectableEntity.extend({
     me.gamestat.updateValue("coins", 1);
     this.collidable = false;
     me.game.remove(this);
-    if(me.gamestat.getItemValue("coins") === me.gamestat.getItemValue("totalCoins")){
-      obj.youWin();
+    let test = me.state.isCurrent(me.state.LEVEL1)
+     if(me.gamestat.getItemValue("coins") === me.gamestat.getItemValue("totalCoins")){
+      if (me.state.isCurrent(me.state.LEVEL1)) {
+          me.state.change(me.state.LEVEL2);
+      } else {
+        obj.youWin();
+      }
     }
   }
 }); 

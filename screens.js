@@ -26,10 +26,14 @@ var Level2 = me.ScreenObject.extend({
 
 var TitleScreen = me.ScreenObject.extend({
   init: function() {
+    var titleScreenST;
+    this.titleScreenST = new Audio("music/soundtrack/a_night_of_dizzy_spells.mp3");
+    this.titleScreenST.play();
     this.parent(true);
     me.input.bindKey(me.input.KEY.SPACE, "jump", true);
   },
   onResetEvent: function() {
+    this.titleScreenST.play();
     if (this.title == null) {
       this.title = me.loader.getImage("titleScreen");
       document.getElementById('game_state').innerHTML = "";
@@ -39,6 +43,7 @@ var TitleScreen = me.ScreenObject.extend({
   update: function() {
     if (me.input.isKeyPressed('jump')) {
       me.state.change(me.state.LEVEL1);
+      this.titleScreenST.pause();
     }
     return true;
   },

@@ -8,10 +8,17 @@ var PlayerEntity = me.ObjectEntity.extend({
     if (me.input.isKeyPressed('left')) { this.doWalk(true); } 
     else if (me.input.isKeyPressed('right')) { this.doWalk(false); } 
     else { this.vel.x = 0; };
-    if (me.input.isKeyPressed('jump')) { this.doJump(); }
+    if (me.input.isKeyPressed('jump')) {
+      var jumpAudio = new Audio("music/sfx/jump.mp3");
+      jumpAudio.play();
+      this.doJump();
+    }
     me.game.collide(this);
     this.updateMovement();
-    if (this.bottom > 490){ this.gameOver(); }
+    if (this.bottom > 490){
+      var fallAudio = new Audio("music/sfx/fall.mp3");
+      fallAudio.play();
+      this.gameOver(); }
     if (this.vel.x!=0 || this.vel.y!=0) {
       this.parent(this);
       return true;
@@ -37,6 +44,8 @@ var CoinEntity = me.CollectableEntity.extend({
   },
   onCollision : function (res, obj) {
     me.gamestat.updateValue("coins", 1);
+    var coinAudio = new Audio("music/sfx/cling.mp3");
+    coinAudio.play();
     this.collidable = false;
     me.game.remove(this);
     let test = me.state.isCurrent(me.state.LEVEL1)
@@ -62,6 +71,8 @@ var EnemyEntity = me.ObjectEntity.extend({
     this.collidable = true;
   },
   onCollision: function(res, obj) {
+    var stompAudio = new Audio("music/sfx/stomp.mp3");
+    stompAudio.play();
     obj.gameOver();
   },
   update: function() {

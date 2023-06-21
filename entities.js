@@ -19,7 +19,11 @@ var PlayerEntity = me.ObjectEntity.extend({
     return false;
   },
   gameOver: function() {
-    me.state.change(me.state.MENU);
+    if (me.state.isCurrent(me.state.LEVEL1)) {
+      me.state.change(me.state.LEVEL1);
+    } else if (me.state.isCurrent(me.state.LEVEL2)) {
+      me.state.change(me.state.LEVEL2);
+    }
   },
   youWin: function() {
     me.state.change(me.state.MENU);

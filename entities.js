@@ -16,9 +16,12 @@ var PlayerEntity = me.ObjectEntity.extend({
     me.game.collide(this);
     this.updateMovement();
     if (this.bottom > 490){
+      if (!this.isFalling){
       var fallAudio = new Audio("music/sfx/fall.mp3");
       fallAudio.play();
       this.gameOver();
+      this.isFalling = true;
+      }
     }
     if (this.vel.x!=0 || this.vel.y!=0) {
       this.parent(this);
@@ -72,9 +75,12 @@ var EnemyEntity = me.ObjectEntity.extend({
     this.collidable = true;
   },
   onCollision: function(res, obj) {
+    if (!this.isColliding) {
     var stompAudio = new Audio("music/sfx/stomp.mp3");
     stompAudio.play();
     obj.gameOver();
+    this.isColliding = true;
+    }
   },
   update: function() {
     if (!this.visible){

@@ -27,11 +27,13 @@ var Level2 = me.ScreenObject.extend({
 var TitleScreen = me.ScreenObject.extend({
   init: function() {
     this.titleScreenST = new Audio("music/soundtrack/a_night_of_dizzy_spells.mp3");
+    this.titleScreenST.loop = true;
     this.titleScreenST.play();
     this.parent(true);
     me.input.bindKey(me.input.KEY.SPACE, "jump", true);
   },
   onResetEvent: function() {
+    this.titleScreenST.load();
     this.titleScreenST.play();
     if (this.title == null) {
       this.title = me.loader.getImage("titleScreen");

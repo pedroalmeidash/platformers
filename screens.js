@@ -26,7 +26,6 @@ var Level2 = me.ScreenObject.extend({
 
 var TitleScreen = me.ScreenObject.extend({
   init: function() {
-    var titleScreenST;
     this.titleScreenST = new Audio("music/soundtrack/a_night_of_dizzy_spells.mp3");
     this.titleScreenST.play();
     this.parent(true);

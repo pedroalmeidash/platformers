@@ -18,7 +18,8 @@ var PlayerEntity = me.ObjectEntity.extend({
     if (this.bottom > 490){
       var fallAudio = new Audio("music/sfx/fall.mp3");
       fallAudio.play();
-      this.gameOver(); }
+      this.gameOver();
+    }
     if (this.vel.x!=0 || this.vel.y!=0) {
       this.parent(this);
       return true;

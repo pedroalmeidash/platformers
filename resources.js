@@ -2,7 +2,12 @@ var resources = [{
   name: "levelSprites",
   type: "image",
   src: "levelSprites.png"
-}, 
+},
+{
+  name: "NES - Super Mario Bros - World 1-1",
+  type: "image",
+  src: "NES - Super Mario Bros - World 1-1.png"
+},
 {
   name: "level1",
   type: "tmx",
@@ -12,6 +17,11 @@ var resources = [{
   name: "level2",
   type: "tmx",
   src: "level2.tmx"
+},
+{
+  name: "levelbonus",
+  type: "tmx",
+  src: "levelbonus.tmx"
 },
 {
   name: "level3",

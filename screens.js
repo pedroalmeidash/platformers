@@ -37,6 +37,19 @@ var Level3 = me.ScreenObject.extend({
   }
 });
 
+var LevelBonus = me.ScreenObject.extend({
+  onDestroyEvent: function() {
+    me.gamestat.reset("coins");
+  },
+  onResetEvent: function() {
+    me.levelDirector.loadLevel("levelbonus");
+    me.input.bindKey(me.input.KEY.LEFT, "left");
+    me.input.bindKey(me.input.KEY.RIGHT, "right");
+    document.getElementById('game_state').innerHTML = "Collect all of the coins!";
+    document.getElementById('instructions').innerHTML = "Arrows to move and Space to jump.";
+  }
+});
+
 var TitleScreen = me.ScreenObject.extend({
   init: function() {
     this.titleScreenST = new Audio("music/soundtrack/a_night_of_dizzy_spells.mp3");

@@ -18,9 +18,11 @@ var jsApp = {
     me.state.LEVEL1 = 9
     me.state.LEVEL2 = 10
     me.state.LEVEL3 = 11
+    me.state.LEVELBONUS = 12
     me.state.set(me.state.LEVEL1, new PlayScreen());
     me.state.set(me.state.LEVEL2, new Level2());
     me.state.set(me.state.LEVEL3, new Level3());
+    me.state.set(me.state.LEVELBONUS, new LevelBonus());
     me.state.set(me.state.MENU, new TitleScreen());
     me.state.transition("fade", "#2FA2C2", 250);
     me.state.change(me.state.MENU);

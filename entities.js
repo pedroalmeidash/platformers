@@ -36,6 +36,8 @@ var PlayerEntity = me.ObjectEntity.extend({
       me.state.change(me.state.LEVEL2);
     } else if (me.state.isCurrent(me.state.LEVEL3)) {
       me.state.change(me.state.LEVEL3);
+    } else if (me.state.isCurrent(me.state.LEVELBONUS)) {
+      me.state.change(me.state.LEVELBONUS);
     }
   },
   youWin: function() {
@@ -60,6 +62,8 @@ var CoinEntity = me.CollectableEntity.extend({
           me.state.change(me.state.LEVEL2);
       } else if (me.state.isCurrent(me.state.LEVEL2)) {
         me.state.change(me.state.LEVEL3);
+      } else if (me.state.isCurrent(me.state.LEVEL3)) {
+        me.state.change(me.state.LEVELBONUS);
       } else {
         obj.youWin();
       }

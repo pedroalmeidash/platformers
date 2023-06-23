@@ -45,7 +45,7 @@
     <property name="spritewidth" value="16"/>
    </properties>
   </object>
-  <object id="5" name="coin" x="400.63" y="287.324">
+  <object id="5" name="coin" x="384.955" y="293.099">
    <properties>
     <property name="image" value="coin"/>
     <property name="spritewidth" value="16"/>
@@ -59,7 +59,7 @@
   </object>
  </objectgroup>
  <objectgroup id="5" name="EnemyEntities">
-  <object id="6" name="EnemyEntity" x="320.042" y="335.497" width="79.3244" height="16"/>
+  <object id="6" name="EnemyEntity" x="288.28" y="335.909" width="79.3244" height="16"/>
   <object id="1" name="EnemyEntity" x="400.346" y="335.214" width="78.6153" height="16"/>
  </objectgroup>
 </map>
